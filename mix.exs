@@ -38,7 +38,8 @@ defmodule Wire.MixProject do
       {:telemetry_poller, "~> 1.0"},
       {:jason, "~> 1.2"},
       {:dns_cluster, "~> 0.1.1"},
-      {:bandit, "~> 1.2"}
+      {:bandit, "~> 1.2"},
+      {:redix, "~> 1.1"}
     ]
   end
 

@@ -14,7 +14,9 @@ defmodule Wire.Application do
       # Start a worker by calling: Wire.Worker.start_link(arg)
       # {Wire.Worker, arg},
       # Start to serve requests, typically the last entry
-      WireWeb.Endpoint
+      WireWeb.Endpoint,
+      Wire.ExternalRedis,
+      Supervisor.child_spec({Task, fn -> Wire.Redis.accept(6543) end}, restart: :permanent)
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
